@@ -1,0 +1,24 @@
+{
+    "KPackageStructure": "Plasma/Wallpaper",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Huzerovo"
+            }
+        ],
+        "Category": "",
+        "Description": "A KDE Plasma 6 wallpaper plugin",
+        "Description[zh_TW]": "动态壁纸插件",
+        "Id": "moe.huzerovo.plasma.live2dwallpaper",
+        "License": "GPLv2+",
+        "Name": "Video Wallpaper",
+        "Name[zh_CN]": "动态壁纸"
+    },
+    "Keywords": [
+        "video",
+        "wallpaper",
+        "live2d"
+    ],
+    "X-KDE-ParantApp": "org.kde.plasmashell",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

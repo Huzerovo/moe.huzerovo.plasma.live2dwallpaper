@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+    <kcfgfile name="" />
+
+    <group name="General">
+        <entry name="filePath" type="Path">
+            <label>The video wallpaper file path</label>
+            <default></default>
+        </entry>
+        <entry name="fillMode" type="Int">
+            <label>Sizing, cropping and positioning of the wallpaper video</label>
+            <default>0</default>
+        </entry>
+        <entry name="muteVideo" type="Bool">
+            <label>Mute the video</label>
+            <default>true</default>
+        </entry>
+        <entry name="waitingTime" type="Int">
+            <label>The number of seconds to wait for the next retries</label>
+            <default>60</default>
+        </entry>
+        <entry name="maxRetryTimes" type="Int">
+            <label>Maximum retries times, zero means always retrying</label>
+            <default>3</default>
+        </entry>
+        <entry name="enableNotify" type="Bool">
+            <label>Enable send the notification</label>
+            <default>true</default>
+        </entry>
+    </group>
+
+</kcfg>
