@@ -5,7 +5,6 @@ import QtQuick.Dialogs as QQD
 import QtMultimedia
 
 import org.kde.kirigami as Kirigami
-import org.kde.plasma.plasmoid
 
 import "code/Utils.js" as Utils
 
