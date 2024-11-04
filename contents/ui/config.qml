@@ -4,6 +4,8 @@ import QtQuick.Controls as QQC
 import QtQuick.Dialogs as QQD
 import QtMultimedia
 
+import org.kde.plasma.components 3.0 as PC3
+
 import org.kde.kirigami as Kirigami
 
 import "code/Utils.js" as Utils
@@ -12,6 +14,7 @@ Kirigami.FormLayout {
     id: configRoot
     property alias cfg_filePath: filePath.text
     property alias cfg_muteVideo: muteVideo.checked
+    property alias cfg_videoVolume: videoVolume.value
     property alias cfg_waitingTime: waitingTime.value
     property alias cfg_maxRetryTimes: maxRetryTimes.value
     property alias cfg_fillMode: fillMode.currentIndex
@@ -107,6 +110,27 @@ Kirigami.FormLayout {
         QQC.CheckBox {
             id: muteVideo
             checked: cfg_muteVideo
+        }
+    }
+
+    // video volume
+    RowLayout {
+        enabled: !muteVideo.checked
+        Kirigami.FormData.label: i18n("Volume:")
+        PC3.Slider{
+            id: videoVolume
+            Layout.fillWidth: true
+            from: 0
+            to: 100
+            value: cfg_videoVolume
+            stepSize: 1
+        }
+
+        PC3.Label {
+            function formatText(value) {
+                return i18n("%1%", value)
+            }
+            text: formatText(videoVolume.value)
         }
     }
 

@@ -30,12 +30,24 @@ WallpaperItem {
         }
     }
 
+    property int cfg_videoVolume: root.configuration.videoVolume
+    onCfg_videoVolumeChanged:{
+        if (player) {
+            player.volume = scaleVolume(cfg_videoVolume);
+        }
+    }
+
     property int cfg_waitingTime: root.configuration.waitingTime
     property int cfg_maxRetryTimes: root.configuration.maxRetryTimes
 
     property string plugin_name: i18n("Live2d Wallpaper")
     property int retry_count: 0
     property Video player: null
+
+    // scale volume from [0,100] to [0,1]
+    function scaleVolume(v) {
+        return (v / 100.0)**2.0;
+    }
 
     function errorHandler(error, errorString) {
         myNotification.notify(i18n("Wallpaper player crashed"));
@@ -66,6 +78,7 @@ WallpaperItem {
             root.player.source = cfg_filePath;
             root.player.fillMode = cfg_fillMode;
             root.player.muted = cfg_muteVideo;
+            root.player.volume = scaleVolume(cfg_videoVolume);
 
             // handler
             root.player.errorOccurred.connect(errorHandler);

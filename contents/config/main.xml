@@ -17,6 +17,10 @@
             <label>Mute the video</label>
             <default>true</default>
         </entry>
+        <entry name="videoVolume" type="Int">
+            <label>Video Volume</label>
+            <default>100</default>
+        </entry>
         <entry name="waitingTime" type="Int">
             <label>The number of seconds to wait for the next retries</label>
             <default>60</default>
@@ -30,5 +34,4 @@
             <default>true</default>
         </entry>
     </group>
-
 </kcfg>
